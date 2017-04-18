@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0C644891EA6879B005D9B6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644881EA6879B005D9B6B /* AppDelegate.swift */; };
+		A0C6448B1EA6879B005D9B6B /* MapNotTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6448A1EA6879B005D9B6B /* MapNotTrackingViewController.swift */; };
+		A0C6448E1EA6879C005D9B6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C6448C1EA6879C005D9B6B /* Main.storyboard */; };
+		A0C644901EA6879C005D9B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C6448F1EA6879C005D9B6B /* Assets.xcassets */; };
+		A0C644931EA6879C005D9B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C644911EA6879C005D9B6B /* LaunchScreen.storyboard */; };
+		A0C6449B1EA688B3005D9B6B /* MapTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6449A1EA688B3005D9B6B /* MapTrackingViewController.swift */; };
+		A0C6449D1EA6890C005D9B6B /* SaveRouteConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6449C1EA6890C005D9B6B /* SaveRouteConfirmViewController.swift */; };
+		A0C6449F1EA68A6A005D9B6B /* SavedRouteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6449E1EA68A6A005D9B6B /* SavedRouteListViewController.swift */; };
+		A0C644A11EA68A93005D9B6B /* RouteMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644A01EA68A93005D9B6B /* RouteMapViewController.swift */; };
+		A0C644A31EA68B1A005D9B6B /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644A21EA68B1A005D9B6B /* RouteDetailViewController.swift */; };
+		A0C644A51EA68B36005D9B6B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644A41EA68B36005D9B6B /* MenuViewController.swift */; };
+		A0C644A71EA68B5A005D9B6B /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644A61EA68B5A005D9B6B /* WriteReviewViewController.swift */; };
+		A0C644A91EA68B91005D9B6B /* ReadReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644A81EA68B91005D9B6B /* ReadReviewsViewController.swift */; };
+		A0C644AB1EA68BC1005D9B6B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644AA1EA68BC1005D9B6B /* AboutViewController.swift */; };
+		A0C644AD1EA68BD4005D9B6B /* AppHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644AC1EA68BD4005D9B6B /* AppHelpViewController.swift */; };
+		A0C644AF1EA68C1E005D9B6B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644AE1EA68C1E005D9B6B /* Route.swift */; };
+		A0C644B11EA68C8D005D9B6B /* MyRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644B01EA68C8D005D9B6B /* MyRoutes.swift */; };
+		A0C644B31EA68CF1005D9B6B /* AppReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644B21EA68CF1005D9B6B /* AppReviews.swift */; };
+		A0C644B51EA6946F005D9B6B /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644B41EA6946F005D9B6B /* ReviewDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A0C644851EA6879B005D9B6B /* RouteTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0C644881EA6879B005D9B6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A0C6448A1EA6879B005D9B6B /* MapNotTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNotTrackingViewController.swift; sourceTree = "<group>"; };
+		A0C6448D1EA6879C005D9B6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A0C6448F1EA6879C005D9B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0C644921EA6879C005D9B6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A0C644941EA6879C005D9B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0C6449A1EA688B3005D9B6B /* MapTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTrackingViewController.swift; sourceTree = "<group>"; };
+		A0C6449C1EA6890C005D9B6B /* SaveRouteConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveRouteConfirmViewController.swift; sourceTree = "<group>"; };
+		A0C6449E1EA68A6A005D9B6B /* SavedRouteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedRouteListViewController.swift; sourceTree = "<group>"; };
+		A0C644A01EA68A93005D9B6B /* RouteMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteMapViewController.swift; sourceTree = "<group>"; };
+		A0C644A21EA68B1A005D9B6B /* RouteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
+		A0C644A41EA68B36005D9B6B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A0C644A61EA68B5A005D9B6B /* WriteReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
+		A0C644A81EA68B91005D9B6B /* ReadReviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadReviewsViewController.swift; sourceTree = "<group>"; };
+		A0C644AA1EA68BC1005D9B6B /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		A0C644AC1EA68BD4005D9B6B /* AppHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelpViewController.swift; sourceTree = "<group>"; };
+		A0C644AE1EA68C1E005D9B6B /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		A0C644B01EA68C8D005D9B6B /* MyRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRoutes.swift; sourceTree = "<group>"; };
+		A0C644B21EA68CF1005D9B6B /* AppReviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReviews.swift; sourceTree = "<group>"; };
+		A0C644B41EA6946F005D9B6B /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0C644821EA6879B005D9B6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0C6447C1EA6879A005D9B6B = {
+			isa = PBXGroup;
+			children = (
+				A0C644871EA6879B005D9B6B /* RouteTracker */,
+				A0C644861EA6879B005D9B6B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A0C644861EA6879B005D9B6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0C644851EA6879B005D9B6B /* RouteTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0C644871EA6879B005D9B6B /* RouteTracker */ = {
+			isa = PBXGroup;
+			children = (
+				A0C644B61EA696E7005D9B6B /* Controllers */,
+				A0C644B71EA69785005D9B6B /* Models */,
+				A0C6448C1EA6879C005D9B6B /* Main.storyboard */,
+				A0C6448F1EA6879C005D9B6B /* Assets.xcassets */,
+				A0C644911EA6879C005D9B6B /* LaunchScreen.storyboard */,
+				A0C644941EA6879C005D9B6B /* Info.plist */,
+			);
+			path = RouteTracker;
+			sourceTree = "<group>";
+		};
+		A0C644B61EA696E7005D9B6B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A0C6448A1EA6879B005D9B6B /* MapNotTrackingViewController.swift */,
+				A0C6449A1EA688B3005D9B6B /* MapTrackingViewController.swift */,
+				A0C6449C1EA6890C005D9B6B /* SaveRouteConfirmViewController.swift */,
+				A0C6449E1EA68A6A005D9B6B /* SavedRouteListViewController.swift */,
+				A0C644A01EA68A93005D9B6B /* RouteMapViewController.swift */,
+				A0C644A21EA68B1A005D9B6B /* RouteDetailViewController.swift */,
+				A0C644A41EA68B36005D9B6B /* MenuViewController.swift */,
+				A0C644A61EA68B5A005D9B6B /* WriteReviewViewController.swift */,
+				A0C644A81EA68B91005D9B6B /* ReadReviewsViewController.swift */,
+				A0C644B41EA6946F005D9B6B /* ReviewDetailViewController.swift */,
+				A0C644AA1EA68BC1005D9B6B /* AboutViewController.swift */,
+				A0C644AC1EA68BD4005D9B6B /* AppHelpViewController.swift */,
+				A0C644881EA6879B005D9B6B /* AppDelegate.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A0C644B71EA69785005D9B6B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0C644AE1EA68C1E005D9B6B /* Route.swift */,
+				A0C644B01EA68C8D005D9B6B /* MyRoutes.swift */,
+				A0C644B21EA68CF1005D9B6B /* AppReviews.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0C644841EA6879B005D9B6B /* RouteTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0C644971EA6879C005D9B6B /* Build configuration list for PBXNativeTarget "RouteTracker" */;
+			buildPhases = (
+				A0C644811EA6879B005D9B6B /* Sources */,
+				A0C644821EA6879B005D9B6B /* Frameworks */,
+				A0C644831EA6879B005D9B6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RouteTracker;
+			productName = RouteTracker;
+			productReference = A0C644851EA6879B005D9B6B /* RouteTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0C6447D1EA6879A005D9B6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Front Row Crew";
+				TargetAttributes = {
+					A0C644841EA6879B005D9B6B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 6WA6Y7KBQJ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A0C644801EA6879A005D9B6B /* Build configuration list for PBXProject "RouteTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A0C6447C1EA6879A005D9B6B;
+			productRefGroup = A0C644861EA6879B005D9B6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0C644841EA6879B005D9B6B /* RouteTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0C644831EA6879B005D9B6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C644931EA6879C005D9B6B /* LaunchScreen.storyboard in Resources */,
+				A0C644901EA6879C005D9B6B /* Assets.xcassets in Resources */,
+				A0C6448E1EA6879C005D9B6B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0C644811EA6879B005D9B6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C6448B1EA6879B005D9B6B /* MapNotTrackingViewController.swift in Sources */,
+				A0C644B31EA68CF1005D9B6B /* AppReviews.swift in Sources */,
+				A0C644A11EA68A93005D9B6B /* RouteMapViewController.swift in Sources */,
+				A0C644AB1EA68BC1005D9B6B /* AboutViewController.swift in Sources */,
+				A0C6449F1EA68A6A005D9B6B /* SavedRouteListViewController.swift in Sources */,
+				A0C644AF1EA68C1E005D9B6B /* Route.swift in Sources */,
+				A0C644A31EA68B1A005D9B6B /* RouteDetailViewController.swift in Sources */,
+				A0C644A91EA68B91005D9B6B /* ReadReviewsViewController.swift in Sources */,
+				A0C644B11EA68C8D005D9B6B /* MyRoutes.swift in Sources */,
+				A0C6449B1EA688B3005D9B6B /* MapTrackingViewController.swift in Sources */,
+				A0C644AD1EA68BD4005D9B6B /* AppHelpViewController.swift in Sources */,
+				A0C644A71EA68B5A005D9B6B /* WriteReviewViewController.swift in Sources */,
+				A0C6449D1EA6890C005D9B6B /* SaveRouteConfirmViewController.swift in Sources */,
+				A0C644891EA6879B005D9B6B /* AppDelegate.swift in Sources */,
+				A0C644B51EA6946F005D9B6B /* ReviewDetailViewController.swift in Sources */,
+				A0C644A51EA68B36005D9B6B /* MenuViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A0C6448C1EA6879C005D9B6B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0C6448D1EA6879C005D9B6B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A0C644911EA6879C005D9B6B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0C644921EA6879C005D9B6B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A0C644951EA6879C005D9B6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A0C644961EA6879C005D9B6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A0C644981EA6879C005D9B6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
+				INFOPLIST_FILE = RouteTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.frontRowCrew.RouteTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A0C644991EA6879C005D9B6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
+				INFOPLIST_FILE = RouteTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.frontRowCrew.RouteTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A0C644801EA6879A005D9B6B /* Build configuration list for PBXProject "RouteTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0C644951EA6879C005D9B6B /* Debug */,
+				A0C644961EA6879C005D9B6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0C644971EA6879C005D9B6B /* Build configuration list for PBXNativeTarget "RouteTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0C644981EA6879C005D9B6B /* Debug */,
+				A0C644991EA6879C005D9B6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A0C6447D1EA6879A005D9B6B /* Project object */;
+}
