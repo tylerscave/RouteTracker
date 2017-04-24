@@ -13,10 +13,24 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapNotTrackingViewController: UIViewController {
+class MapNotTrackingViewController: UIViewController, CLLocationManagerDelegate {
 
+    
+    @IBOutlet weak var mapNotTracking: MKMapView!
+    
+    var locationManager:CLLocationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.delegate = self
+        
+        let mapCenter = CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667)
+        let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
+        // Set animated property to true to animate the transition to the region
+        //mapNotTracking.setRegion(region, animated: false)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -24,6 +38,8 @@ class MapNotTrackingViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
 
 }
