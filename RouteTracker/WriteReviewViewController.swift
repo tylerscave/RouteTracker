@@ -13,9 +13,13 @@ import UIKit
 
 class WriteReviewViewController: UIViewController {
 
+    @IBOutlet weak var feedbackView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var borderColor : UIColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
+        feedbackView.layer.borderWidth = 0.5
+        feedbackView.layer.borderColor = borderColor.cgColor
+        feedbackView.layer.cornerRadius = 5.0
         // Do any additional setup after loading the view.
     }
 
