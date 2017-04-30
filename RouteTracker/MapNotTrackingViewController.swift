@@ -34,6 +34,8 @@ class MapNotTrackingViewController: UIViewController, CLLocationManagerDelegate 
     
     
     private func zoomOnUser(userLocation: CLLocation) {
+        //todo
+    }
     
 
 
