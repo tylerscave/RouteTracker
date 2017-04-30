@@ -13,7 +13,7 @@
         <!--RouteTracker-->
         <scene sceneID="IaD-vE-jBV">
             <objects>
-                <viewController id="9cK-Wa-DgO" customClass="MapNotTrackingViewController" customModule="RouteTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9cK-Wa-DgO" customClass="MapTrackingViewController" customModule="RouteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ohP-bu-SIt"/>
                         <viewControllerLayoutGuide type="bottom" id="n60-LR-RH4"/>
@@ -45,9 +45,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="RouteTracker" id="dtc-hy-lxj"/>
-                    <connections>
-                        <outlet property="mapNotTracking" destination="pdJ-5V-Ig7" id="IBE-Pz-Tam"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJ3-G7-tST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
