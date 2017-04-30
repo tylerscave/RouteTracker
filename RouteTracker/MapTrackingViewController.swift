@@ -13,14 +13,30 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapTrackingViewController: UIViewController {
+class MapTrackingViewController: UIViewController, CLLocationManagerDelegate {
+
+    var tracking = false;
+    var locationManager:CLLocationManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.delegate = self
         // Do any additional setup after loading the view.
     }
 
+    
+    @IBAction func startButton(_ sender: UIButton) {
+        if(tracking==true){
+            tracking = false;
+        }
+        sender.setTitle("Stop Route Tracking", for: .normal)
+        sender.setTitleColor(UIColor.red, for: .normal)
+        tracking = true
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
