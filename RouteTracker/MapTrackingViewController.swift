@@ -18,6 +18,7 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate {
     var tracking = false;
     var locationManager:CLLocationManager?
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager = CLLocationManager()
@@ -30,10 +31,13 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func startButton(_ sender: UIButton) {
         if(tracking==true){
             tracking = false;
-        }
+            performSegue(withIdentifier: "saveRoute", sender: self)
+            
+        } else{
         sender.setTitle("Stop Route Tracking", for: .normal)
-        sender.setTitleColor(UIColor.red, for: .normal)
+        sender.backgroundColor = .red
         tracking = true
+        }
         
     }
     
