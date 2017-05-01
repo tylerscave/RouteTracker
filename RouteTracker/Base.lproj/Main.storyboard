@@ -53,7 +53,7 @@
         <!--UserLocation-->
         <scene sceneID="md4-zz-J5T">
             <objects>
-                <viewController id="O2e-2G-A9E" sceneMemberID="viewController">
+                <viewController id="O2e-2G-A9E" customClass="MapNotTrackingViewController" customModule="RouteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VMo-nV-Uec"/>
                         <viewControllerLayoutGuide type="bottom" id="LWG-I5-Fpm"/>
@@ -75,10 +75,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="UserLocation" id="xbT-F2-MR3"/>
+                    <connections>
+                        <outlet property="mapView" destination="H0V-gB-RZp" id="h6A-aC-0PX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Syc-cI-sp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2631" y="1255"/>
+            <point key="canvasLocation" x="2593" y="1284"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="xCF-Hm-8OD">
