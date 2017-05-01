@@ -15,8 +15,7 @@ import CoreLocation
 
 class MapNotTrackingViewController: UIViewController, CLLocationManagerDelegate {
 
-    
-    @IBOutlet weak var mapNotTracking: MKMapView!
+
     
     var locationManager:CLLocationManager?
     
@@ -33,6 +32,10 @@ class MapNotTrackingViewController: UIViewController, CLLocationManagerDelegate 
         // Dispose of any resources that can be recreated.
     }
     
+    
+    private func zoomOnUser(userLocation: CLLocation) {
+        //todo
+    }
     
 
 
