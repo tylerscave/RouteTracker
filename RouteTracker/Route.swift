@@ -9,8 +9,36 @@
 //
 
 import Foundation
+import CoreData
+import CoreLocation
 
-class Route {
+class Route: NSManagedObject {
    // TODO 
+    @NSManaged var distance: NSNumber
+    @NSManaged var startTimestamp: NSDate
+    @NSManaged var endTimestamp: NSDate
+    @NSManaged var locations: Array<CLLocation>
+    
+    var duration: TimeInterval {
+        get {
+            return endTimestamp.timeIntervalSince(startTimestamp as Date)
+        }
+    }
+    
+    func addDistance(distance: Double) {
+        self.distance = NSNumber(value: (self.distance.doubleValue + distance))
+    }
+    
+    func addNewLocation(location: CLLocation) {
+        locations.append(location)
+    }
+    
+    override func awakeFromInsert() {
+        super.awakeFromInsert()
+        
+        locations = [CLLocation]()
+        startTimestamp = NSDate()
+        distance = 0.0
+    }
     
 }
