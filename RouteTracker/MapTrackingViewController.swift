@@ -21,6 +21,7 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate {
 //    let timeLocation = Route(context: context)
     var routes = MyRoutes()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager = CLLocationManager()
