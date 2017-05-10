@@ -43,20 +43,15 @@ class MapNotTrackingViewController: UIViewController, CLLocationManagerDelegate,
         let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation, 3000, 3000)
         mapView.setRegion(viewRegion, animated: true)
         
-        
         DispatchQueue.main.async {
             self.locationManager?.startUpdatingLocation()
         }
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
