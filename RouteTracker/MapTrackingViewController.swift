@@ -19,6 +19,8 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
     var tracking = false;
     var locationManager:CLLocationManager?
     @IBOutlet weak var mapView: MKMapView!
+    //    let timeLocation = Route(context: context)
+    var routes = MyRoutes()
 
     
     override func viewDidLoad() {
