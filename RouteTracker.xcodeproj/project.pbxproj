@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F3283CC1EBEA7AD00DC5B91 /* RouteTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F3283CA1EBEA7AD00DC5B91 /* RouteTracker.xcdatamodeld */; };
 		A0C644891EA6879B005D9B6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644881EA6879B005D9B6B /* AppDelegate.swift */; };
 		A0C6448B1EA6879B005D9B6B /* MapNotTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6448A1EA6879B005D9B6B /* MapNotTrackingViewController.swift */; };
 		A0C6448E1EA6879C005D9B6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C6448C1EA6879C005D9B6B /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F3283CB1EBEA7AD00DC5B91 /* routetracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = routetracker.xcdatamodel; sourceTree = "<group>"; };
 		A0C644851EA6879B005D9B6B /* RouteTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C644881EA6879B005D9B6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0C6448A1EA6879B005D9B6B /* MapNotTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNotTrackingViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		A0C6447C1EA6879A005D9B6B = {
 			isa = PBXGroup;
 			children = (
+				5F3283CA1EBEA7AD00DC5B91 /* RouteTracker.xcdatamodeld */,
 				A0C644871EA6879B005D9B6B /* RouteTracker */,
 				A0C644861EA6879B005D9B6B /* Products */,
 			);
@@ -115,9 +118,9 @@
 		A0C644B71EA69785005D9B6B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A0C644B21EA68CF1005D9B6B /* AppReviews.swift */,
 				A0C644AE1EA68C1E005D9B6B /* Route.swift */,
 				A0C644B01EA68C8D005D9B6B /* MyRoutes.swift */,
-				A0C644B21EA68CF1005D9B6B /* AppReviews.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				A0C644891EA6879B005D9B6B /* AppDelegate.swift in Sources */,
 				A0C644B51EA6946F005D9B6B /* ReviewDetailViewController.swift in Sources */,
 				A0C644A51EA68B36005D9B6B /* MenuViewController.swift in Sources */,
+				5F3283CC1EBEA7AD00DC5B91 /* RouteTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,8 +378,23 @@
 				A0C644991EA6879C005D9B6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5F3283CA1EBEA7AD00DC5B91 /* RouteTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5F3283CB1EBEA7AD00DC5B91 /* routetracker.xcdatamodel */,
+			);
+			currentVersion = 5F3283CB1EBEA7AD00DC5B91 /* routetracker.xcdatamodel */;
+			name = RouteTracker.xcdatamodeld;
+			path = RouteTracker/RouteTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A0C6447D1EA6879A005D9B6B /* Project object */;
 }

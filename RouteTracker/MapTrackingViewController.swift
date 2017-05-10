@@ -12,6 +12,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -48,26 +49,77 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
             self.locationManager?.startUpdatingLocation()
         }
         // Do any additional setup after loading the view.
-    }
-
-    
-    @IBAction func startButton(_ sender: UIButton) {
-        if(tracking==true){
-            tracking = false;
-            performSegue(withIdentifier: "saveRoute", sender: self)
-            
-        } else{
-        sender.setTitle("Stop Route Tracking", for: .normal)
-        sender.backgroundColor = .red
-        tracking = true
-        }
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+ 
+//IMPLEMENTED IN THE MYROUTES MODESL
+//    func insertTimeLocPairStart(){
+//        //START TIME
+//        timeLocation.startTimestamp = NSDate()
+//        
+//        //SAVE LOCATION
+//        
+//        //TODO
+//        appDelegate.saveContext()
+//     
+//    }
+//    func insertTimeLocPairEnd(){
+//        //START TIME
+//        timeLocation.endTimestamp = NSDate()
+//        
+//        //SAVE LOCATION
+//        
+//        //TODO
+//        appDelegate.saveContext()
+//        
+//    }
+    func changeToStopButton(button: UIButton){
+        button.setTitle("Stop Route Tracking", for: .normal)
+        button.setTitleColor(UIColor.red, for: .normal)
     }
+    func changeToStartButton(button: UIButton){
+        button.setTitle("Start Route Tracking", for: .normal)
+        button.setTitleColor(UIColor.green, for: .normal)
+    }
+    
+    @IBAction func startStopButton(_ sender: UIButton) {
+        //        let newRoute = NSEntityDescription.insertNewObject(forEntityName: "RouteTacker", into: context)
+
+        //Start tracking
+        if(tracking==false){
+            //set button state and color
+            tracking = true
+            changeToStopButton(button: sender)
+            routes.startRoute()
+//            insertTimeLocPairStart()
+        
+            //OLD
+            //            let timeLocation = Route(contsext: context)
+            //save route to Core Data(variable located in App Delegate)
+//            newRoute.setValue(NSDate(), forKey: "startTimeStamp")
+//            newRoute.setValue(NSDate(), forKey: "locations")
+            //CURRENT LOCATION
+
+        }
+
+        else{ //(tracking==true)
+            tracking = false;
+            changeToStartButton(button: sender)
+            routes.stopRoute()
+
+            //END TIME
+//            insertTimeLocPairEnd()
+
+            //TODO
+            //LAST LOCATION
+            //DISTANCE CALCULATED
+        }
+    }
+    
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
     
 
     /*
