@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F3283CC1EBEA7AD00DC5B91 /* RouteTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F3283CA1EBEA7AD00DC5B91 /* RouteTracker.xcdatamodeld */; };
+		A055EE7B1EC4338D00C0E496 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A055EE7A1EC4338D00C0E496 /* MapKit.framework */; };
 		A0C644891EA6879B005D9B6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644881EA6879B005D9B6B /* AppDelegate.swift */; };
 		A0C6448B1EA6879B005D9B6B /* MapNotTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6448A1EA6879B005D9B6B /* MapNotTrackingViewController.swift */; };
 		A0C6448E1EA6879C005D9B6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C6448C1EA6879C005D9B6B /* Main.storyboard */; };
@@ -23,14 +24,15 @@
 		A0C644A91EA68B91005D9B6B /* ReadReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644A81EA68B91005D9B6B /* ReadReviewsViewController.swift */; };
 		A0C644AB1EA68BC1005D9B6B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644AA1EA68BC1005D9B6B /* AboutViewController.swift */; };
 		A0C644AD1EA68BD4005D9B6B /* AppHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644AC1EA68BD4005D9B6B /* AppHelpViewController.swift */; };
-		A0C644AF1EA68C1E005D9B6B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644AE1EA68C1E005D9B6B /* Route.swift */; };
+		A0C644AF1EA68C1E005D9B6B /* MyRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644AE1EA68C1E005D9B6B /* MyRoute.swift */; };
 		A0C644B11EA68C8D005D9B6B /* MyRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644B01EA68C8D005D9B6B /* MyRoutes.swift */; };
 		A0C644B31EA68CF1005D9B6B /* AppReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644B21EA68CF1005D9B6B /* AppReviews.swift */; };
 		A0C644B51EA6946F005D9B6B /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644B41EA6946F005D9B6B /* ReviewDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F3283CB1EBEA7AD00DC5B91 /* routetracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = routetracker.xcdatamodel; sourceTree = "<group>"; };
+		5F3283CB1EBEA7AD00DC5B91 /* routetracker.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = routetracker.xcdatamodel; sourceTree = "<group>"; };
+		A055EE7A1EC4338D00C0E496 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A0C644851EA6879B005D9B6B /* RouteTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C644881EA6879B005D9B6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0C6448A1EA6879B005D9B6B /* MapNotTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNotTrackingViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		A0C644A81EA68B91005D9B6B /* ReadReviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadReviewsViewController.swift; sourceTree = "<group>"; };
 		A0C644AA1EA68BC1005D9B6B /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A0C644AC1EA68BD4005D9B6B /* AppHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelpViewController.swift; sourceTree = "<group>"; };
-		A0C644AE1EA68C1E005D9B6B /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		A0C644AE1EA68C1E005D9B6B /* MyRoute.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; path = MyRoute.swift; sourceTree = "<group>"; };
 		A0C644B01EA68C8D005D9B6B /* MyRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRoutes.swift; sourceTree = "<group>"; };
 		A0C644B21EA68CF1005D9B6B /* AppReviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReviews.swift; sourceTree = "<group>"; };
 		A0C644B41EA6946F005D9B6B /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
@@ -59,18 +61,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A055EE7B1EC4338D00C0E496 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A055EE791EC4338D00C0E496 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A055EE7A1EC4338D00C0E496 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A0C6447C1EA6879A005D9B6B = {
 			isa = PBXGroup;
 			children = (
 				5F3283CA1EBEA7AD00DC5B91 /* RouteTracker.xcdatamodeld */,
 				A0C644871EA6879B005D9B6B /* RouteTracker */,
 				A0C644861EA6879B005D9B6B /* Products */,
+				A055EE791EC4338D00C0E496 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				A0C644B21EA68CF1005D9B6B /* AppReviews.swift */,
-				A0C644AE1EA68C1E005D9B6B /* Route.swift */,
+				A0C644AE1EA68C1E005D9B6B /* MyRoute.swift */,
 				A0C644B01EA68C8D005D9B6B /* MyRoutes.swift */,
 			);
 			name = Models;
@@ -159,6 +171,14 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 6WA6Y7KBQJ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -203,7 +223,7 @@
 				A0C644A11EA68A93005D9B6B /* RouteMapViewController.swift in Sources */,
 				A0C644AB1EA68BC1005D9B6B /* AboutViewController.swift in Sources */,
 				A0C6449F1EA68A6A005D9B6B /* SavedRouteListViewController.swift in Sources */,
-				A0C644AF1EA68C1E005D9B6B /* Route.swift in Sources */,
+				A0C644AF1EA68C1E005D9B6B /* MyRoute.swift in Sources */,
 				A0C644A31EA68B1A005D9B6B /* RouteDetailViewController.swift in Sources */,
 				A0C644A91EA68B91005D9B6B /* ReadReviewsViewController.swift in Sources */,
 				A0C644B11EA68C8D005D9B6B /* MyRoutes.swift in Sources */,

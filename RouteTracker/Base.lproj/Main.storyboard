@@ -31,7 +31,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Start Route Tracking"/>
                                 <connections>
-                                    <action selector="startButton:" destination="9cK-Wa-DgO" eventType="touchUpInside" id="egv-zx-OYS"/>
+                                    <action selector="startStopButton:" destination="9cK-Wa-DgO" eventType="touchUpInside" id="wMn-6n-xUG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -47,7 +47,7 @@
                             <constraint firstAttribute="trailing" secondItem="7Wy-SO-R7e" secondAttribute="trailing" id="iwV-AS-Ade"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="RouteTracker" id="dtc-hy-lxj"/>
+                    <tabBarItem key="tabBarItem" title="RouteTracker" id="dtc-hy-lxj" propertyAccessControl="none"/>
                     <connections>
                         <outlet property="mapView" destination="pdJ-5V-Ig7" id="z92-Gq-eUd"/>
                         <segue destination="uAC-vY-RYz" kind="show" identifier="saveRoute" id="ugW-f8-3oZ"/>

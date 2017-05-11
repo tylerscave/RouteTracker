@@ -14,14 +14,12 @@ import MapKit
 import CoreLocation
 import CoreData
 
-class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIToolbarDelegate {
 
-    var tracking = false;
-    var locationManager:CLLocationManager?
+    private var tracking = false;
+    private var locationManager:CLLocationManager?
     @IBOutlet weak var mapView: MKMapView!
-    //    let timeLocation = Route(context: context)
-    var routes = MyRoutes()
-
+    let routes = MyRoutes.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,87 +49,122 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
             self.locationManager?.startUpdatingLocation()
         }
         // Do any additional setup after loading the view.
-        
     }
- 
-//IMPLEMENTED IN THE MYROUTES MODESL
-//    func insertTimeLocPairStart(){
-//        //START TIME
-//        timeLocation.startTimestamp = NSDate()
-//        
-//        //SAVE LOCATION
-//        
-//        //TODO
-//        appDelegate.saveContext()
-//     
-//    }
-//    func insertTimeLocPairEnd(){
-//        //START TIME
-//        timeLocation.endTimestamp = NSDate()
-//        
-//        //SAVE LOCATION
-//        
-//        //TODO
-//        appDelegate.saveContext()
-//        
-//    }
+
     func changeToStopButton(button: UIButton){
         button.setTitle("Stop Route Tracking", for: .normal)
-        button.setTitleColor(UIColor.red, for: .normal)
+        button.backgroundColor = UIColor.red
     }
     func changeToStartButton(button: UIButton){
         button.setTitle("Start Route Tracking", for: .normal)
-        button.setTitleColor(UIColor.green, for: .normal)
+        button.backgroundColor = UIColor.green
     }
     
     @IBAction func startStopButton(_ sender: UIButton) {
-        //        let newRoute = NSEntityDescription.insertNewObject(forEntityName: "RouteTacker", into: context)
-
         //Start tracking
         if(tracking==false){
             //set button state and color
             tracking = true
             changeToStopButton(button: sender)
+            locationManager?.startUpdatingLocation()
             routes.startRoute()
-//            insertTimeLocPairStart()
-        
-            //OLD
-            //            let timeLocation = Route(contsext: context)
-            //save route to Core Data(variable located in App Delegate)
-//            newRoute.setValue(NSDate(), forKey: "startTimeStamp")
-//            newRoute.setValue(NSDate(), forKey: "locations")
-            //CURRENT LOCATION
-
-        }
-
-        else{ //(tracking==true)
+        } else { //(tracking==true)
             tracking = false;
             changeToStartButton(button: sender)
+            locationManager?.stopUpdatingLocation()
             routes.stopRoute()
+        }
+        updateDisplay()
+    }
+    
+    private func updateDisplay() {
+        if let route = routes.currentRoute {
+            if let region = self.mapRegion(myRoute: route) {
+                mapView.setRegion(region, animated: true)
+            }
+        }
+        //mapView.removeOverlays(mapView.overlays)
+        mapView.add(polyLine())
+    }
 
-            //END TIME
-//            insertTimeLocPairEnd()
 
-            //TODO
-            //LAST LOCATION
-            //DISTANCE CALCULATED
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let route = routes.currentRoute {
+            for location in locations {
+                if let newLocation = location as? CLLocation {
+                    if newLocation.horizontalAccuracy > 0 {
+                        
+                        mapView.setCenter(newLocation.coordinate, animated: true)
+                        let region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 3000, 3000)
+                        mapView.setRegion(region, animated: true)
+
+                        let locations = route.locations as Array<CLLocation>
+                        if let oldLocation = locations.last as CLLocation? {
+                            let delta: Double = newLocation.distance(from: oldLocation)
+                            route.addDistance(distance: delta)
+                        }
+                        route.addNewLocation(location: newLocation)
+                    }
+                }
+            }
+            updateDisplay()
         }
     }
     
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func polyLine() -> MKPolyline {
+        if let route = routes.currentRoute {
+            var coordinates = route.locations.map({ (location: CLLocation) ->
+                CLLocationCoordinate2D in
+                return location.coordinate
+            })
+            return MKPolyline(coordinates: &coordinates, count: route.locations.count)
+        }
+        return MKPolyline()
     }
-    */
 
+    
+    private func mapRegion(myRoute: MyRoute) -> MKCoordinateRegion? {
+        if let startLocation = myRoute.locations.first {
+            var minLatitude = startLocation.coordinate.latitude
+            var maxLatitude = startLocation.coordinate.latitude
+            
+            var minLongitude = startLocation.coordinate.longitude
+            var maxLongitude = startLocation.coordinate.longitude
+            
+            for location in myRoute.locations {
+                if location.coordinate.latitude < minLatitude {
+                    minLatitude = location.coordinate.latitude
+                }
+                if location.coordinate.latitude > maxLatitude {
+                    maxLatitude = location.coordinate.latitude
+                }
+                
+                if location.coordinate.longitude < minLongitude {
+                    minLongitude = location.coordinate.longitude
+                }
+                if location.coordinate.latitude > maxLongitude {
+                    maxLongitude = location.coordinate.longitude
+                }
+            }
+            
+            let center = CLLocationCoordinate2D(latitude: (minLatitude + maxLatitude)/2.0,
+                                                longitude: (minLongitude + maxLongitude)/2.0)
+            let span = MKCoordinateSpan(latitudeDelta: (maxLatitude - minLatitude)*7,
+                                        longitudeDelta: (maxLongitude - minLongitude)*7)
+            
+            return MKCoordinateRegion(center: center, span: span)
+        }
+        return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if let polyLine = overlay as? MKPolyline {
+            let renderer = MKPolylineRenderer(polyline: polyLine)
+            renderer.strokeColor = UIColor(hue:0.88, saturation:0.44, brightness:0.77, alpha:0.75)
+            renderer.lineWidth = 6
+            return renderer
+        }
+        return overlay as! MKOverlayRenderer
+    }
 }

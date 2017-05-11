@@ -12,16 +12,16 @@ import Foundation
 import CoreData
 import CoreLocation
 
-class Route: NSManagedObject {
+class MyRoute: NSManagedObject {
    // TODO 
     @NSManaged var distance: NSNumber
-    @NSManaged var startTimestamp: NSDate
-    @NSManaged var endTimestamp: NSDate
+    @NSManaged var startTimeStamp: NSDate
+    @NSManaged var endTimeStamp: NSDate
     @NSManaged var locations: Array<CLLocation>
     
     var duration: TimeInterval {
         get {
-            return endTimestamp.timeIntervalSince(startTimestamp as Date)
+            return endTimeStamp.timeIntervalSince(startTimeStamp as Date)
         }
     }
     
@@ -37,7 +37,7 @@ class Route: NSManagedObject {
         super.awakeFromInsert()
         
         locations = [CLLocation]()
-        startTimestamp = NSDate()
+        startTimeStamp = NSDate()
         distance = 0.0
     }
     
