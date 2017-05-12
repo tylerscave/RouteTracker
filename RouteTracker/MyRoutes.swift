@@ -24,6 +24,7 @@ class MyRoutes: NSObject{
     }
     
     var currentRoute: MyRoute?
+    var selectedtRoute: MyRoute?
     
     //get the fetch request for all route
     lazy var allRoutes: [MyRoute] = {

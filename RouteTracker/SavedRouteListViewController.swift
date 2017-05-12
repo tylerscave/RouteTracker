@@ -49,7 +49,7 @@ class SavedRouteListViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let allRoutes = MyRoutes.sharedInstance.allRoutes
         let route = allRoutes[indexPath.row] as MyRoute
-        MyRoutes.sharedInstance.currentRoute = route
+        MyRoutes.sharedInstance.selectedtRoute = route
         self.dismiss(animated: true, completion: nil)
     }
 }

@@ -13,28 +13,69 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class RouteMapViewController: UIViewController {
-
+class RouteMapViewController: UIViewController, MKMapViewDelegate {
+    
+    @IBOutlet weak var mapView: MKMapView!
+    let routes = MyRoutes.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        mapView.delegate = self
+        self.updateDisplay()
+        self.mapView.addOverlays(mapView.overlays)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func updateDisplay() {
+        if let selectedRoute = routes.selectedtRoute {
+            if let region = self.mapRegion(myRoute: selectedRoute) {
+                mapView.setRegion(region, animated: true)
+            }
+            mapView.add(polyLine())
+        }
+        mapView.addOverlays(mapView.overlays)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    private func polyLine() -> MKPolyline {
+        if let selectedRoute = routes.selectedtRoute {
+            var coordinates = selectedRoute.locations.map({ (location: CLLocation) ->
+                CLLocationCoordinate2D in
+                return location.coordinate
+            })
+            return MKPolyline(coordinates: &coordinates, count: selectedRoute.locations.count)
+        }
+        return MKPolyline()
     }
-    */
+    
+    
+    private func mapRegion(myRoute: MyRoute) -> MKCoordinateRegion? {
+        if myRoute.locations.first != nil {
+            var regionRect = polyLine().boundingMapRect
+            let wPadding = regionRect.size.width * 0.25
+            let hPadding = regionRect.size.height * 0.25
+            
+            //Add padding to the region
+            regionRect.size.width += wPadding
+            regionRect.size.height += hPadding
+            
+            //Center the region on the line
+            regionRect.origin.x -= wPadding / 2
+            regionRect.origin.y -= hPadding / 2
+            
+            return MKCoordinateRegionForMapRect(regionRect)
+        }
+        return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if let polyLine = overlay as? MKPolyline {
+            let renderer = MKPolylineRenderer(polyline: polyLine)
+            renderer.strokeColor = UIColor(hue:0.88, saturation:0.44, brightness:0.77, alpha:0.75)
+            renderer.lineWidth = 6
+            return renderer
+        }
+        return overlay as! MKOverlayRenderer
+    }
 
 }
