@@ -36,8 +36,8 @@ class SavedRouteListViewController: UIViewController, UITableViewDataSource, UIT
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell")!
 
         let allRoutes = MyRoutes.sharedInstance.allRoutes
-        let route = allRoutes[indexPath.row]
-        cell.textLabel?.text = dateFormatter.string(from: route.startTimeStamp as Date)
+        let selectedRoute = allRoutes[indexPath.row]
+        cell.textLabel?.text = dateFormatter.string(from: selectedRoute.startTimeStamp as Date)
             
         return cell
     }

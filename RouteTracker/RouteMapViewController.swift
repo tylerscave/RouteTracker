@@ -14,7 +14,7 @@ import MapKit
 import CoreLocation
 
 class RouteMapViewController: UIViewController, MKMapViewDelegate {
-    
+
     @IBOutlet weak var mapView: MKMapView!
     let routes = MyRoutes.sharedInstance
     

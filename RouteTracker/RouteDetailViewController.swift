@@ -13,26 +13,27 @@ import UIKit
 
 class RouteDetailViewController: UIViewController {
 
+    @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var distanceField: UITextField!
+    @IBOutlet weak var timeField: UITextField!
+    let routes = MyRoutes.sharedInstance
+    //let selectedRoute = MyRoutes.sharedInstance.selectedtRoute!
+    let dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let selectedRoute = routes.selectedtRoute {
+            dateFormatter.dateStyle = .long
+            dateFormatter.timeStyle = .none
+            dateField.text = dateFormatter.string(from: selectedRoute.startTimeStamp as Date)
+            dateField.textAlignment = .center
 
-        // Do any additional setup after loading the view.
+            distanceField.text = String(format:"%f", selectedRoute.distance)
+            distanceField.textAlignment = .center
+        
+            timeField.text = String(format:"%f", selectedRoute.endTimeStamp.timeIntervalSince(selectedRoute.startTimeStamp as Date))
+            timeField.textAlignment = .center
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

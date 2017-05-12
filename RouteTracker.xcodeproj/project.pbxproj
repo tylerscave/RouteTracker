@@ -10,7 +10,6 @@
 		5F3283CC1EBEA7AD00DC5B91 /* RouteTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F3283CA1EBEA7AD00DC5B91 /* RouteTracker.xcdatamodeld */; };
 		A055EE7B1EC4338D00C0E496 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A055EE7A1EC4338D00C0E496 /* MapKit.framework */; };
 		A0C644891EA6879B005D9B6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644881EA6879B005D9B6B /* AppDelegate.swift */; };
-		A0C6448B1EA6879B005D9B6B /* MapNotTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6448A1EA6879B005D9B6B /* MapNotTrackingViewController.swift */; };
 		A0C6448E1EA6879C005D9B6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C6448C1EA6879C005D9B6B /* Main.storyboard */; };
 		A0C644901EA6879C005D9B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C6448F1EA6879C005D9B6B /* Assets.xcassets */; };
 		A0C644931EA6879C005D9B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C644911EA6879C005D9B6B /* LaunchScreen.storyboard */; };
@@ -30,7 +29,6 @@
 		A055EE7A1EC4338D00C0E496 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A0C644851EA6879B005D9B6B /* RouteTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C644881EA6879B005D9B6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0C6448A1EA6879B005D9B6B /* MapNotTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNotTrackingViewController.swift; sourceTree = "<group>"; };
 		A0C6448D1EA6879C005D9B6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0C6448F1EA6879C005D9B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0C644921EA6879C005D9B6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 		A0C644B61EA696E7005D9B6B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A0C6448A1EA6879B005D9B6B /* MapNotTrackingViewController.swift */,
 				A0C6449A1EA688B3005D9B6B /* MapTrackingViewController.swift */,
 				A0C6449C1EA6890C005D9B6B /* SaveRouteConfirmViewController.swift */,
 				A0C6449E1EA68A6A005D9B6B /* SavedRouteListViewController.swift */,
@@ -203,7 +200,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0C6448B1EA6879B005D9B6B /* MapNotTrackingViewController.swift in Sources */,
 				A0C644A11EA68A93005D9B6B /* RouteMapViewController.swift in Sources */,
 				A0C6449F1EA68A6A005D9B6B /* SavedRouteListViewController.swift in Sources */,
 				A0C644AF1EA68C1E005D9B6B /* MyRoute.swift in Sources */,
