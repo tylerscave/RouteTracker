@@ -14,7 +14,7 @@ import MapKit
 import CoreLocation
 import CoreData
 
-class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIToolbarDelegate {
+class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     private var tracking = false;
     private var locationManager:CLLocationManager?
@@ -82,9 +82,6 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //Zoom to user location
-        zoomToLocation()
-        
         // If we are currently tracking a route
         if let route = routes.currentRoute {
             for location in locations {
@@ -97,6 +94,9 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
             }
             updateDisplay()
         }
+        if (!tracking) {
+            zoomToLocation()
+        }
     }
     
     private func updateDisplay() {
@@ -104,9 +104,9 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
             if let region = self.mapRegion(myRoute: route) {
                 mapView.setRegion(region, animated: true)
             }
+            mapView.add(polyLine())
         }
         //mapView.removeOverlays(mapView.overlays)
-        mapView.add(polyLine())
     }
     
     
@@ -126,7 +126,6 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
         if let startLocation = myRoute.locations.first {
             var minLatitude = startLocation.coordinate.latitude
             var maxLatitude = startLocation.coordinate.latitude
-            
             var minLongitude = startLocation.coordinate.longitude
             var maxLongitude = startLocation.coordinate.longitude
             
@@ -145,13 +144,11 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
                     maxLongitude = location.coordinate.longitude
                 }
             }
-            
             let center = CLLocationCoordinate2D(latitude: (minLatitude + maxLatitude)/2.0,
                                                 longitude: (minLongitude + maxLongitude)/2.0)
             let viewRegion = MKCoordinateSpan(latitudeDelta: (maxLatitude - minLatitude)*1.5,
                                         longitudeDelta: (maxLongitude - minLongitude)*1.5)
             return MKCoordinateRegion(center: center, span: viewRegion)
-
         }
         return nil
     }

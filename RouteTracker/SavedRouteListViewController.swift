@@ -11,29 +11,45 @@
 //
 
 import UIKit
+import Foundation
 
-class SavedRouteListViewController: UIViewController {
-
+class SavedRouteListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    let dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
-    */
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell")!
+
+        let allRoutes = MyRoutes.sharedInstance.allRoutes
+        let route = allRoutes[indexPath.row]
+        cell.textLabel?.text = dateFormatter.string(from: route.startTimeStamp as Date)
+            
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MyRoutes.sharedInstance.allRoutes.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let allRoutes = MyRoutes.sharedInstance.allRoutes
+        let route = allRoutes[indexPath.row] as MyRoute
+        MyRoutes.sharedInstance.currentRoute = route
+        self.dismiss(animated: true, completion: nil)
+    }
 }
