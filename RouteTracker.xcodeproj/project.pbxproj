@@ -21,11 +21,8 @@
 		A0C644A31EA68B1A005D9B6B /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644A21EA68B1A005D9B6B /* RouteDetailViewController.swift */; };
 		A0C644A51EA68B36005D9B6B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644A41EA68B36005D9B6B /* MenuViewController.swift */; };
 		A0C644A71EA68B5A005D9B6B /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644A61EA68B5A005D9B6B /* WriteReviewViewController.swift */; };
-		A0C644AB1EA68BC1005D9B6B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644AA1EA68BC1005D9B6B /* AboutViewController.swift */; };
-		A0C644AD1EA68BD4005D9B6B /* AppHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644AC1EA68BD4005D9B6B /* AppHelpViewController.swift */; };
 		A0C644AF1EA68C1E005D9B6B /* MyRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644AE1EA68C1E005D9B6B /* MyRoute.swift */; };
 		A0C644B11EA68C8D005D9B6B /* MyRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644B01EA68C8D005D9B6B /* MyRoutes.swift */; };
-		A0C644B31EA68CF1005D9B6B /* AppReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C644B21EA68CF1005D9B6B /* AppReviews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,11 +42,8 @@
 		A0C644A21EA68B1A005D9B6B /* RouteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
 		A0C644A41EA68B36005D9B6B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A0C644A61EA68B5A005D9B6B /* WriteReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
-		A0C644AA1EA68BC1005D9B6B /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		A0C644AC1EA68BD4005D9B6B /* AppHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelpViewController.swift; sourceTree = "<group>"; };
 		A0C644AE1EA68C1E005D9B6B /* MyRoute.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; path = MyRoute.swift; sourceTree = "<group>"; };
 		A0C644B01EA68C8D005D9B6B /* MyRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRoutes.swift; sourceTree = "<group>"; };
-		A0C644B21EA68CF1005D9B6B /* AppReviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReviews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +108,6 @@
 				A0C644A21EA68B1A005D9B6B /* RouteDetailViewController.swift */,
 				A0C644A41EA68B36005D9B6B /* MenuViewController.swift */,
 				A0C644A61EA68B5A005D9B6B /* WriteReviewViewController.swift */,
-				A0C644AA1EA68BC1005D9B6B /* AboutViewController.swift */,
-				A0C644AC1EA68BD4005D9B6B /* AppHelpViewController.swift */,
 				A0C644881EA6879B005D9B6B /* AppDelegate.swift */,
 			);
 			name = Controllers;
@@ -124,7 +116,6 @@
 		A0C644B71EA69785005D9B6B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A0C644B21EA68CF1005D9B6B /* AppReviews.swift */,
 				A0C644AE1EA68C1E005D9B6B /* MyRoute.swift */,
 				A0C644B01EA68C8D005D9B6B /* MyRoutes.swift */,
 			);
@@ -213,15 +204,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C6448B1EA6879B005D9B6B /* MapNotTrackingViewController.swift in Sources */,
-				A0C644B31EA68CF1005D9B6B /* AppReviews.swift in Sources */,
 				A0C644A11EA68A93005D9B6B /* RouteMapViewController.swift in Sources */,
-				A0C644AB1EA68BC1005D9B6B /* AboutViewController.swift in Sources */,
 				A0C6449F1EA68A6A005D9B6B /* SavedRouteListViewController.swift in Sources */,
 				A0C644AF1EA68C1E005D9B6B /* MyRoute.swift in Sources */,
 				A0C644A31EA68B1A005D9B6B /* RouteDetailViewController.swift in Sources */,
 				A0C644B11EA68C8D005D9B6B /* MyRoutes.swift in Sources */,
 				A0C6449B1EA688B3005D9B6B /* MapTrackingViewController.swift in Sources */,
-				A0C644AD1EA68BD4005D9B6B /* AppHelpViewController.swift in Sources */,
 				A0C644A71EA68B5A005D9B6B /* WriteReviewViewController.swift in Sources */,
 				A0C6449D1EA6890C005D9B6B /* SaveRouteConfirmViewController.swift in Sources */,
 				A0C644891EA6879B005D9B6B /* AppDelegate.swift in Sources */,
