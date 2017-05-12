@@ -36,26 +36,30 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
             locationManager?.requestAlwaysAuthorization()
             locationManager?.requestWhenInUseAuthorization()
         }
+        //Update location if we have permission
         locationManager?.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager?.startUpdatingLocation()
         }
         //Zoom to user location
-        let userLocation = CLLocationCoordinate2D(latitude: (locationManager?.location?.coordinate.latitude)!, longitude: (locationManager?.location?.coordinate.longitude)!)
-        let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation, 3000, 3000)
-        mapView.setRegion(viewRegion, animated: true)
+        self.zoomToLocation()
         
         DispatchQueue.main.async {
             self.locationManager?.startUpdatingLocation()
         }
-        // Do any additional setup after loading the view.
+    }
+    
+    private func zoomToLocation() {
+        let userLocation = CLLocationCoordinate2D(latitude: (locationManager?.location?.coordinate.latitude)!, longitude: (locationManager?.location?.coordinate.longitude)!)
+        let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation, 3000, 3000)
+        mapView.setRegion(viewRegion, animated: true)
     }
 
-    func changeToStopButton(button: UIButton){
+    private func changeToStopButton(button: UIButton){
         button.setTitle("Stop Route Tracking", for: .normal)
         button.backgroundColor = UIColor.red
     }
-    func changeToStartButton(button: UIButton){
+    private func changeToStartButton(button: UIButton){
         button.setTitle("Start Route Tracking", for: .normal)
         button.backgroundColor = UIColor.green
     }
@@ -76,6 +80,24 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
         }
         updateDisplay()
     }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //Zoom to user location
+        zoomToLocation()
+        
+        // If we are currently tracking a route
+        if let route = routes.currentRoute {
+            for location in locations {
+                let locations = route.locations as Array<CLLocation>
+                if let oldLocation = locations.last as CLLocation? {
+                    let delta: Double = location.distance(from: oldLocation)
+                    route.addDistance(distance: delta)
+                }
+                route.addNewLocation(location: location)
+            }
+            updateDisplay()
+        }
+    }
     
     private func updateDisplay() {
         if let route = routes.currentRoute {
@@ -85,30 +107,6 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
         }
         //mapView.removeOverlays(mapView.overlays)
         mapView.add(polyLine())
-    }
-
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let route = routes.currentRoute {
-            for location in locations {
-                if let newLocation = location as? CLLocation {
-                    if newLocation.horizontalAccuracy > 0 {
-                        
-                        mapView.setCenter(newLocation.coordinate, animated: true)
-                        let region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 3000, 3000)
-                        mapView.setRegion(region, animated: true)
-
-                        let locations = route.locations as Array<CLLocation>
-                        if let oldLocation = locations.last as CLLocation? {
-                            let delta: Double = newLocation.distance(from: oldLocation)
-                            route.addDistance(distance: delta)
-                        }
-                        route.addNewLocation(location: newLocation)
-                    }
-                }
-            }
-            updateDisplay()
-        }
     }
     
     
@@ -150,8 +148,8 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
             
             let center = CLLocationCoordinate2D(latitude: (minLatitude + maxLatitude)/2.0,
                                                 longitude: (minLongitude + maxLongitude)/2.0)
-            let span = MKCoordinateSpan(latitudeDelta: (maxLatitude - minLatitude)*7,
-                                        longitudeDelta: (maxLongitude - minLongitude)*7)
+            let span = MKCoordinateSpan(latitudeDelta: (maxLatitude - minLatitude)*4,
+                                        longitudeDelta: (maxLongitude - minLongitude)*4)
             
             return MKCoordinateRegion(center: center, span: span)
         }
