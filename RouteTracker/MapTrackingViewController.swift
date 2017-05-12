@@ -148,10 +148,10 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
             
             let center = CLLocationCoordinate2D(latitude: (minLatitude + maxLatitude)/2.0,
                                                 longitude: (minLongitude + maxLongitude)/2.0)
-            let span = MKCoordinateSpan(latitudeDelta: (maxLatitude - minLatitude)*4,
-                                        longitudeDelta: (maxLongitude - minLongitude)*4)
-            
-            return MKCoordinateRegion(center: center, span: span)
+            let viewRegion = MKCoordinateSpan(latitudeDelta: (maxLatitude - minLatitude)*1.5,
+                                        longitudeDelta: (maxLongitude - minLongitude)*1.5)
+            return MKCoordinateRegion(center: center, span: viewRegion)
+
         }
         return nil
     }
