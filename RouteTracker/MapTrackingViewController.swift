@@ -123,32 +123,20 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
 
     
     private func mapRegion(myRoute: MyRoute) -> MKCoordinateRegion? {
-        if let startLocation = myRoute.locations.first {
-            var minLatitude = startLocation.coordinate.latitude
-            var maxLatitude = startLocation.coordinate.latitude
-            var minLongitude = startLocation.coordinate.longitude
-            var maxLongitude = startLocation.coordinate.longitude
+        if myRoute.locations.first != nil {
+            var regionRect = polyLine().boundingMapRect
+            let wPadding = regionRect.size.width * 0.25
+            let hPadding = regionRect.size.height * 0.25
             
-            for location in myRoute.locations {
-                if location.coordinate.latitude < minLatitude {
-                    minLatitude = location.coordinate.latitude
-                }
-                if location.coordinate.latitude > maxLatitude {
-                    maxLatitude = location.coordinate.latitude
-                }
-                
-                if location.coordinate.longitude < minLongitude {
-                    minLongitude = location.coordinate.longitude
-                }
-                if location.coordinate.latitude > maxLongitude {
-                    maxLongitude = location.coordinate.longitude
-                }
-            }
-            let center = CLLocationCoordinate2D(latitude: (minLatitude + maxLatitude)/2.0,
-                                                longitude: (minLongitude + maxLongitude)/2.0)
-            let viewRegion = MKCoordinateSpan(latitudeDelta: (maxLatitude - minLatitude)*1.5,
-                                        longitudeDelta: (maxLongitude - minLongitude)*1.5)
-            return MKCoordinateRegion(center: center, span: viewRegion)
+            //Add padding to the region
+            regionRect.size.width += wPadding
+            regionRect.size.height += hPadding
+            
+            //Center the region on the line
+            regionRect.origin.x -= wPadding / 2
+            regionRect.origin.y -= hPadding / 2
+            
+            return MKCoordinateRegionForMapRect(regionRect)
         }
         return nil
     }
