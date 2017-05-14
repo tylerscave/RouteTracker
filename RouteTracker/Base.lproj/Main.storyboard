@@ -13,7 +13,7 @@
         <!--RouteTracker-->
         <scene sceneID="IaD-vE-jBV">
             <objects>
-                <viewController id="9cK-Wa-DgO" customClass="MapTrackingViewController" customModule="RouteTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="routeTracking" id="9cK-Wa-DgO" customClass="MapTrackingViewController" customModule="RouteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ohP-bu-SIt"/>
                         <viewControllerLayoutGuide type="bottom" id="n60-LR-RH4"/>
@@ -88,7 +88,7 @@
         <!--Past Routes-->
         <scene sceneID="X1n-Ud-1C4">
             <objects>
-                <viewController title="Past Routes" id="Aqs-z5-9RH" customClass="SavedRouteListViewController" customModule="RouteTracker" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="savedRoutes" title="Past Routes" id="Aqs-z5-9RH" customClass="SavedRouteListViewController" customModule="RouteTracker" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j57-zh-j8D"/>
                         <viewControllerLayoutGuide type="bottom" id="q27-MF-XDE"/>
