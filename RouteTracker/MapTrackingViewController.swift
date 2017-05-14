@@ -73,14 +73,24 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
             locationManager?.startUpdatingLocation()
             routes.startRoute()
         } else { //(tracking==true)
-            tracking = false;
-            changeToStartButton(button: sender)
-            locationManager?.stopUpdatingLocation()
-            routes.stopRoute()
+            let saveConfirmation = UIAlertController(title: "Save Route", message: "Do you want to save this route?", preferredStyle: .alert)
+            let saveAction = UIAlertAction(title: "Save", style: .destructive) { (alert: UIAlertAction!) -> Void in
+                self.tracking = false;
+                self.changeToStartButton(button: sender)
+                self.locationManager?.stopUpdatingLocation()
+                self.routes.stopRoute()
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (alert: UIAlertAction!) -> Void in
+                // do nothing and keep tracking route
+            }
+            saveConfirmation.addAction(saveAction)
+            saveConfirmation.addAction(cancelAction)
+            present(saveConfirmation, animated: true, completion:nil)
         }
         updateDisplay()
     }
-
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // If we are currently tracking a route
         if let route = routes.currentRoute {
