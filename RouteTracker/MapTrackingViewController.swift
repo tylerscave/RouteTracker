@@ -79,6 +79,11 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
                 self.changeToStartButton(button: sender)
                 self.locationManager?.stopUpdatingLocation()
                 self.routes.stopRoute()
+                
+                // added but not working yet
+                
+                presentViewController(SavedRouteListViewController.self, animated: true, completion: nil)
+                //self.performSegue(withIdentifier: "savedRoutesSegue", sender: MapTrackingViewController.self)
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (alert: UIAlertAction!) -> Void in
                 // do nothing and keep tracking route
