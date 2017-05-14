@@ -18,6 +18,7 @@ class RouteDetailViewController: UIViewController {
     @IBOutlet weak var timeField: UITextField!
     let routes = MyRoutes.sharedInstance
     let dateFormatter = DateFormatter()
+    let distanceFormatter = MeasurementFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,10 @@ class RouteDetailViewController: UIViewController {
             dateFormatter.timeStyle = .none
             dateField.text = dateFormatter.string(from: selectedRoute.startTimeStamp as Date)
             dateField.textAlignment = .center
-
-            distanceField.text = String(format:"%f", selectedRoute.distance)
+            
+            let calculatedDistance = Measurement(value: Double(selectedRoute.distance), unit: UnitLength.feet)
+            let distanceInMiles = calculatedDistance.converted(to: .miles)
+            distanceField.text = distanceFormatter.string(from: distanceInMiles)
             distanceField.textAlignment = .center
         
             timeField.text = stringFromTimeInterval(interval: selectedRoute.duration) as String
