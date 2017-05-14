@@ -13,16 +13,14 @@ import CoreData
 import CoreLocation
 
 class MyRoute: NSManagedObject {
-   // TODO 
+
     @NSManaged var distance: NSNumber
     @NSManaged var startTimeStamp: NSDate
     @NSManaged var endTimeStamp: NSDate
     @NSManaged var locations: Array<CLLocation>
     
     var duration: TimeInterval {
-        get {
-            return endTimeStamp.timeIntervalSince(startTimeStamp as Date)
-        }
+        get { return endTimeStamp.timeIntervalSince(startTimeStamp as Date) }
     }
     
     func addDistance(distance: Double) {
@@ -40,5 +38,4 @@ class MyRoute: NSManagedObject {
         startTimeStamp = NSDate()
         distance = 0.0
     }
-    
 }
