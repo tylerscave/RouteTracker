@@ -9,7 +9,7 @@
 //  Copyright © 2017 Front Row Crew. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 import MapKit
 import CoreLocation
 
@@ -23,8 +23,8 @@ class RouteMapViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         self.updateDisplay()
         self.mapView.addOverlays(mapView.overlays)
+        
     }
-
     
     private func updateDisplay() {
         if let selectedRoute = routes.selectedtRoute {
