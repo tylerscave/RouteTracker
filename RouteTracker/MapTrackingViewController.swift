@@ -79,12 +79,10 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
                 self.changeToStartButton(button: sender)
                 self.locationManager?.stopUpdatingLocation()
                 self.routes.stopRoute()
-                
-                // added but not working yet
-                self.performSegue(withIdentifier: "saveRoutesSegue", sender: MapTrackingViewController.self)
+                self.mapView.removeOverlays(self.mapView.overlays)
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (alert: UIAlertAction!) -> Void in
-                // do nothing and keep tracking route
+                // do nothing and continue tracking route
             }
             saveConfirmation.addAction(saveAction)
             saveConfirmation.addAction(cancelAction)
@@ -119,7 +117,6 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
             }
             mapView.add(polyLine())
         }
-        //mapView.removeOverlays(mapView.overlays)
     }
     
     

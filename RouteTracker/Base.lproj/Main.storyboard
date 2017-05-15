@@ -50,12 +50,11 @@
                     <tabBarItem key="tabBarItem" title="RouteTracker" id="dtc-hy-lxj" propertyAccessControl="none"/>
                     <connections>
                         <outlet property="mapView" destination="pdJ-5V-Ig7" id="z92-Gq-eUd"/>
-                        <segue destination="VGK-v5-CBP" kind="show" identifier="saveRoutesSegue" id="gQY-bu-Prq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJ3-G7-tST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3244" y="1337"/>
+            <point key="canvasLocation" x="3244" y="1196"/>
         </scene>
         <!--Past Routes-->
         <scene sceneID="X1n-Ud-1C4">
@@ -77,11 +76,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="krn-6h-YD0" id="Tzr-FJ-X51">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YjL-cG-ex0">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -114,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hS-Ha-OEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5120.8000000000002" y="1270.6146926536733"/>
+            <point key="canvasLocation" x="4974" y="1196"/>
         </scene>
         <!--Route Detail-->
         <scene sceneID="jjw-2I-VfU">
@@ -129,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Route" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0F-yV-X1P">
-                                <rect key="frame" x="0.0" y="28" width="375" height="46"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="PFD-rE-6bM"/>
                                 </constraints>
@@ -138,7 +137,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBW-9B-w5M">
-                                <rect key="frame" x="0.0" y="201" width="375" height="46"/>
+                                <rect key="frame" x="0.0" y="245" width="375" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="k1l-sh-zaV"/>
                                 </constraints>
@@ -156,7 +155,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tqa-IT-qqh">
-                                <rect key="frame" x="0.0" y="82" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="126" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6VM-r9-fyf"/>
                                 </constraints>
@@ -164,7 +163,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k6u-Pm-CQX">
-                                <rect key="frame" x="0.0" y="255" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="299" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ZZO-e6-YIO"/>
                                 </constraints>
@@ -172,7 +171,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wS9-zh-DI0">
-                                <rect key="frame" x="0.0" y="428" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="472" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ucN-ts-W3P"/>
                                 </constraints>
@@ -215,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTV-9F-i5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7060" y="2227.736131934033"/>
+            <point key="canvasLocation" x="5854" y="2353"/>
         </scene>
         <!--Route Map-->
         <scene sceneID="scT-ea-kGj">
@@ -230,7 +229,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cUh-kx-9qd">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -248,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uX0-wS-ms3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7060" y="1535.9820089955024"/>
+            <point key="canvasLocation" x="5854" y="1649"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="G0o-Fk-Llc">
@@ -266,7 +265,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xn7-ma-IJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6050" y="1821"/>
+            <point key="canvasLocation" x="4974" y="1983"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="xCF-Hm-8OD">
@@ -283,11 +282,11 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="klI-Vk-3lF" id="Tgp-0v-fFr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Past Route" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YZq-RG-lNn">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -303,11 +302,11 @@
                                         <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEx-av-YvA" id="O4O-Y4-z4M">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lWb-fS-wgp">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -323,11 +322,11 @@
                                         <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2xH-LF-cFY" id="7lF-Wf-MnS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vwV-gG-Zsu">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -343,11 +342,11 @@
                                         <rect key="frame" x="0.0" y="167" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wAl-53-Xkj" id="xWl-oC-s06">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jmN-VU-MLt">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -371,7 +370,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Qv-EX-dJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5122.3999999999996" y="403.44827586206901"/>
+            <point key="canvasLocation" x="4975" y="403"/>
         </scene>
         <!--About-->
         <scene sceneID="002-W2-xng">
@@ -399,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eb-8R-hby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5917.6000000000004" y="-59.820089955022496"/>
+            <point key="canvasLocation" x="5854" y="30"/>
         </scene>
         <!--Help-->
         <scene sceneID="nGV-rp-V2c">
@@ -437,7 +436,7 @@ Viewing Saved Routes
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIm-TM-f66" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6018" y="696"/>
+            <point key="canvasLocation" x="5854" y="766"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="huW-BD-t09">
@@ -481,7 +480,7 @@ Viewing Saved Routes
                             <constraint firstItem="fgd-W8-gbi" firstAttribute="leading" secondItem="gKC-gb-rjD" secondAttribute="leading" id="fAZ-Zg-gEz"/>
                             <constraint firstItem="XmA-iG-KEI" firstAttribute="top" secondItem="TFB-uq-4gj" secondAttribute="bottom" constant="35" id="fC3-Nk-4DN"/>
                             <constraint firstItem="aBl-Z8-aI1" firstAttribute="top" secondItem="XmA-iG-KEI" secondAttribute="bottom" constant="83" id="gUF-0h-K2u"/>
-                            <constraint firstItem="aBl-Z8-aI1" firstAttribute="leading" secondItem="gKC-gb-rjD" secondAttribute="leadingMargin" constant="193" id="mjZ-Fu-Sfw"/>
+                            <constraint firstItem="aBl-Z8-aI1" firstAttribute="leading" secondItem="gKC-gb-rjD" secondAttribute="leadingMargin" constant="19" id="mjZ-Fu-Sfw"/>
                             <constraint firstItem="aBl-Z8-aI1" firstAttribute="leading" secondItem="gKC-gb-rjD" secondAttribute="leadingMargin" constant="19" id="qMD-gr-LF2"/>
                             <constraint firstItem="aBl-Z8-aI1" firstAttribute="top" secondItem="XmA-iG-KEI" secondAttribute="bottom" constant="83" id="s5r-kf-WNM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aBl-Z8-aI1" secondAttribute="trailing" constant="19" id="sPe-Nv-z9I"/>
@@ -496,7 +495,7 @@ Viewing Saved Routes
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVG-7i-j06" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6660" y="229"/>
+            <point key="canvasLocation" x="6551" y="403"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="Unz-2o-0GO">
@@ -515,7 +514,7 @@ Viewing Saved Routes
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLB-MG-E95" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4183.1999999999998" y="403.44827586206901"/>
+            <point key="canvasLocation" x="4103" y="403"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ohp-Gt-3Np">
@@ -529,8 +528,8 @@ Viewing Saved Routes
                         <color key="selectedImageTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8Y7-Mv-Thx" kind="relationship" relationship="viewControllers" id="fbb-eJ-zFH"/>
-                        <segue destination="9cK-Wa-DgO" kind="relationship" relationship="viewControllers" id="P0l-uR-cAR"/>
+                        <segue destination="9cK-Wa-DgO" kind="relationship" relationship="viewControllers" id="TMe-wF-dsg"/>
+                        <segue destination="8Y7-Mv-Thx" kind="relationship" relationship="viewControllers" id="VdK-Hj-foG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkA-ta-ord" userLabel="First Responder" sceneMemberID="firstResponder"/>

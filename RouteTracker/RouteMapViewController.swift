@@ -77,5 +77,4 @@ class RouteMapViewController: UIViewController, MKMapViewDelegate {
         }
         return overlay as! MKOverlayRenderer
     }
-
 }
