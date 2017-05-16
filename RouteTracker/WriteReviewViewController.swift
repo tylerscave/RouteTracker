@@ -2,7 +2,7 @@
 //  WriteReviewViewController.swift
 //  RouteTracker
 //
-//  Controller for the view presented when user has clicked on "Write Review"
+//  Controller for the view presented when user has clicked on "Feedback"
 //  from the Menu. This view is a simple form fill with a text field
 //
 //  Created by Tyler Jones, Pete Curtis, Marshall Cargle, Matt Nowzari on 4/15/17.

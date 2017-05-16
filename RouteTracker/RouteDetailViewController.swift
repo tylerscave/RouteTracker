@@ -2,8 +2,8 @@
 //  RouteDetailViewController.swift
 //  RouteTracker
 //
-//  Controller for the view presented when user has clicked on "Details" from
-//  the route map view. This page displays the details of a single route
+//  Controller for the view presented when user has clicked on the "Route Detail" tab
+//  This page displays the details of a single route
 //
 //  Created by Tyler Jones, Pete Curtis, Marshall Cargle, Matt Nowzari on 4/15/17.
 //  Copyright © 2017 Front Row Crew. All rights reserved.
@@ -16,9 +16,9 @@ class RouteDetailViewController: UIViewController {
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var distanceField: UITextField!
     @IBOutlet weak var timeField: UITextField!
-    let routes = MyRoutes.sharedInstance
-    let dateFormatter = DateFormatter()
-    let distanceFormatter = MeasurementFormatter()
+    private let routes = MyRoutes.sharedInstance
+    private let dateFormatter = DateFormatter()
+    private let distanceFormatter = MeasurementFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,8 @@ class RouteDetailViewController: UIViewController {
         }
     }
     
-    func stringFromTimeInterval(interval: TimeInterval) -> NSString {
+    // helper function to calculate and format the time interval of the route
+    private func stringFromTimeInterval(interval: TimeInterval) -> NSString {
         let ti = NSInteger(interval)
         let seconds = ti % 60
         let minutes = (ti / 60) % 60

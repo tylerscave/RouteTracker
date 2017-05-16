@@ -26,7 +26,7 @@ class MyRoutes: NSObject{
     var currentRoute: MyRoute?
     var selectedtRoute: MyRoute?
     
-    //get the fetch request for all route
+    // fetch all routes from the data model
     lazy var allRoutes: [MyRoute] = {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "MyRoute")
         let sortDescriptor = NSSortDescriptor(key: "startTimeStamp", ascending: true)
@@ -42,6 +42,7 @@ class MyRoutes: NSObject{
         return [MyRoute]()
     }()
     
+    // called when a new route is started
     func startRoute() {
         if (currentRoute == nil) {
             currentRoute = NSEntityDescription.insertNewObject(forEntityName: "MyRoute", into: context) as? MyRoute
@@ -49,6 +50,7 @@ class MyRoutes: NSObject{
         }
     }
     
+    // Called when the route is completed
     func stopRoute() {
         if currentRoute != nil {
             currentRoute?.endTimeStamp = NSDate()
@@ -57,26 +59,12 @@ class MyRoutes: NSObject{
         currentRoute = nil
     }
     
+    // getter for the index of the current route
     func indexOfCurrentRoute() -> Int? {
         if currentRoute != nil {
             return allRoutes.index(of: currentRoute!)
         }
         return nil
     }
-    
-    // MARK: - Core Data stack
-    
-    lazy var applicationDocumentsDirectory: NSURL = {
-        // The directory the application uses to store the Core Data store file.
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return urls[urls.count-1] as NSURL
-    }()
-    
-    lazy var managedObjectModel: NSManagedObjectModel = {
-        // The managed object model for the application. This property is not optional. 
-        //  It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = Bundle.main.url(forResource: "RouteTracker", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
-    }()
 }
 

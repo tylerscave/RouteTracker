@@ -16,7 +16,7 @@ import CoreLocation
 class RouteMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    let routes = MyRoutes.sharedInstance
+    private let routes = MyRoutes.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,7 @@ class RouteMapViewController: UIViewController, MKMapViewDelegate {
         
     }
     
+    // function to add the overlay from the saved route
     private func updateDisplay() {
         if let selectedRoute = routes.selectedtRoute {
             if let region = self.mapRegion(myRoute: selectedRoute) {
@@ -36,7 +37,7 @@ class RouteMapViewController: UIViewController, MKMapViewDelegate {
         mapView.addOverlays(mapView.overlays)
     }
     
-    
+    // function to create the overlay based on the saved route
     private func polyLine() -> MKPolyline {
         if let selectedRoute = routes.selectedtRoute {
             var coordinates = selectedRoute.locations.map({ (location: CLLocation) ->
@@ -48,7 +49,7 @@ class RouteMapViewController: UIViewController, MKMapViewDelegate {
         return MKPolyline()
     }
     
-    
+    // function to define a region around the saved route
     private func mapRegion(myRoute: MyRoute) -> MKCoordinateRegion? {
         if myRoute.locations.first != nil {
             var regionRect = polyLine().boundingMapRect
@@ -68,6 +69,7 @@ class RouteMapViewController: UIViewController, MKMapViewDelegate {
         return nil
     }
     
+    // function to draw the overlay onto the mapview
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let polyLine = overlay as? MKPolyline {
             let renderer = MKPolylineRenderer(polyline: polyLine)

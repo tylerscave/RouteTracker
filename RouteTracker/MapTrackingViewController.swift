@@ -2,8 +2,8 @@
 //  MapTrackingViewController.swift
 //  RouteTracker
 //
-//  Controller for the map view presented when user has started
-//  recording their route.
+//  Controller for the map view. This is the main functionality of the app. This screen
+//  is where the user starts and stops tracking a route.
 //
 //  Created by Tyler Jones, Pete Curtis, Marshall Cargle, Matt Nowzari on 4/15/17.
 //  Copyright © 2017 Front Row Crew. All rights reserved.
@@ -49,12 +49,14 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
         }
     }
     
+    // helper function to zoom to users current location
     private func zoomToLocation() {
         let userLocation = CLLocationCoordinate2D(latitude: (locationManager?.location?.coordinate.latitude)!, longitude: (locationManager?.location?.coordinate.longitude)!)
         let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation, 3000, 3000)
         mapView.setRegion(viewRegion, animated: true)
     }
 
+    // helper functions for animating the stop/start tracking button
     private func changeToStopButton(button: UIButton){
         button.setTitle("Stop Route Tracking", for: .normal)
         button.backgroundColor = UIColor.red
@@ -64,6 +66,7 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
         button.backgroundColor = UIColor.green
     }
     
+    // listener for the start/stop button
     @IBAction func startStopButton(_ sender: UIButton) {
         //Start tracking
         if(tracking==false){
@@ -92,7 +95,8 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
         updateDisplay()
     }
     
-    
+    // function is called anytime the location changes
+    // used to track users location and to update route information
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // If we are currently tracking a route
         if let route = routes.currentRoute {
@@ -105,11 +109,12 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
                 route.addNewLocation(location: location)
             }
             updateDisplay()
-        } else {
+        } else { // not tracking, just follow user
             zoomToLocation()
         }
     }
     
+    // helper function to update the display with the overlay
     private func updateDisplay() {
         if let route = routes.currentRoute {
             if let region = self.mapRegion(myRoute: route) {
@@ -119,7 +124,7 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
         }
     }
     
-    
+    // function to plot the overlay
     private func polyLine() -> MKPolyline {
         if let route = routes.currentRoute {
             var coordinates = route.locations.map({ (location: CLLocation) ->
@@ -131,7 +136,7 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
         return MKPolyline()
     }
 
-    
+    // function to determine map region around the route we are creating
     private func mapRegion(myRoute: MyRoute) -> MKCoordinateRegion? {
         if myRoute.locations.first != nil {
             var regionRect = polyLine().boundingMapRect
@@ -151,6 +156,7 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
         return nil
     }
     
+    // function to actually draw the overlay onto the map
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let polyLine = overlay as? MKPolyline {
             let renderer = MKPolylineRenderer(polyline: polyLine)

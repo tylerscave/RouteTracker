@@ -2,9 +2,9 @@
 //  SavedRouteListViewController.swift
 //  RouteTracker
 //
-//  Controller for the view presented when user has either saved a route,
-//  or clicked on "Routes" from the main menu. The view shows a list of
-//  the users saved routes
+//  Controller for the view presented when user has clicked on "Past Routes"
+//  from the main menu. The view shows a list of the users saved routes.
+//  Each route can be selected or deleted from this page
 //
 //  Created by Tyler Jones, Pete Curtis, Marshall Cargle, Matt Nowzari on 4/15/17.
 //  Copyright © 2017 Front Row Crew. All rights reserved.
@@ -17,8 +17,9 @@ import CoreData
 class SavedRouteListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    let dateFormatter = DateFormatter()
-    var myRoutes = MyRoutes.sharedInstance.allRoutes
+    private let dateFormatter = DateFormatter()
+    private var myRoutes = MyRoutes.sharedInstance.allRoutes
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -35,8 +36,6 @@ class SavedRouteListViewController: UIViewController, UITableViewDataSource, UIT
 
     // create cells containing the routes and populate the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        myRoutes = MyRoutes.sharedInstance.allRoutes
-        //self.tableView.reloadData()
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell")!
         let selectedRoute = myRoutes[indexPath.row]
         let routeTimeSince1970 = selectedRoute.startTimeStamp.timeIntervalSince1970
