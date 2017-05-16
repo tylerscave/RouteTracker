@@ -18,7 +18,6 @@ class SavedRouteListViewController: UIViewController, UITableViewDataSource, UIT
     
     @IBOutlet weak var tableView: UITableView!
     let dateFormatter = DateFormatter()
-    var deleteRouteIndexPath: NSIndexPath? = nil
     var myRoutes = MyRoutes.sharedInstance.allRoutes
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +25,7 @@ class SavedRouteListViewController: UIViewController, UITableViewDataSource, UIT
         tableView.delegate = self
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .short
-        myRoutes = MyRoutes.sharedInstance.allRoutes
+        self.tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,10 +35,24 @@ class SavedRouteListViewController: UIViewController, UITableViewDataSource, UIT
 
     // create cells containing the routes and populate the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        myRoutes = MyRoutes.sharedInstance.allRoutes
+        //self.tableView.reloadData()
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell")!
         let selectedRoute = myRoutes[indexPath.row]
-        cell.textLabel?.text = dateFormatter.string(from: selectedRoute.startTimeStamp as Date)
-            
+        let routeTimeSince1970 = selectedRoute.startTimeStamp.timeIntervalSince1970
+        
+        let dateString = "2005-12-31"
+        let testFormatter = DateFormatter()
+        testFormatter.dateFormat = "yyyy-MM-dd"
+        let testDate = testFormatter.date(from: dateString)
+        let testTimeSince1970 = testDate?.timeIntervalSince1970
+        
+        
+        if (routeTimeSince1970 > testTimeSince1970!) {
+            cell.textLabel?.text = dateFormatter.string(from: selectedRoute.startTimeStamp as Date)
+        } else {
+            cell.isHidden = true
+        }
         return cell
     }
     
@@ -59,15 +72,12 @@ class SavedRouteListViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let myRoute = myRoutes[indexPath.row]
         if editingStyle == .delete {
+            self.tableView.beginUpdates()
             context.delete(myRoute)
             myRoutes.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-            do {
-                try context.save()
-            } catch let error as NSError {
-                print("Error While Deleting Route: \(error.userInfo)")
-            }
+            appDelegate.saveContext()
+            self.tableView.endUpdates()
         }
-        self.tableView.reloadData()
     }
 }

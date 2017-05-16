@@ -80,6 +80,7 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
                 self.locationManager?.stopUpdatingLocation()
                 self.routes.stopRoute()
                 self.mapView.removeOverlays(self.mapView.overlays)
+                self.zoomToLocation()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (alert: UIAlertAction!) -> Void in
                 // do nothing and continue tracking route
@@ -104,8 +105,7 @@ class MapTrackingViewController: UIViewController, CLLocationManagerDelegate, MK
                 route.addNewLocation(location: location)
             }
             updateDisplay()
-        }
-        if (!tracking) {
+        } else {
             zoomToLocation()
         }
     }
